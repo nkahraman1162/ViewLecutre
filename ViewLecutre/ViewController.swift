@@ -9,12 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var startLabelTextfield: UITextField!
+    
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    var counter : Int = Int()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
 
-
+    @IBAction func whenButtonIsPressed(_ sender: Any) {
+        
+        let data = startLabelTextfield.text!
+        counter = Int(data)!
+    }
+    
+    
+    @IBAction func whenCoolButtonPressed(_ sender: Any) {
+        counter += 1
+        numberLabel.text = "\(counter)"
+    }
+    
 }
 
